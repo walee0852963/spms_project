@@ -148,6 +148,6 @@ _For more details on how to use the project, please refer to the Documentation._
 
 Ibrahem Al Nasser - ibrahemalnasser3@gmail.com
 
-Project Link: [https://github.com/DU-EDU-SY/SPMS](https://github.com/DU-EDU-SY/SPMS)
+Project Link: [https://github.com/SPM](https://github.com/walee085296/spms_project)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
