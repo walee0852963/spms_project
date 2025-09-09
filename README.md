@@ -9,7 +9,7 @@
   <h3 align="center">Students Project Management System</h3>
 
   <p align="center">
-    An awesome way to manage your student's projects!
+    An awesome way  to manage your student's projects!
     <br />
     <a href="https://relaxed-banoffee-2df85b.netlify.app/">Report Bugs</a>
     ·
