@@ -51,10 +51,10 @@
                             <div class="hidden md:block md:ml-6 md:pr-4">
                                 <a href="https://advancedacademy.edu.eg/Katamia/RootPages/Default.aspx"
                                     class="font-bold text-gray-500 hover:text-gray-900 px-3 py-2 rounded-full hover:bg-gray-100">Home</a>
-                                <a href="https://github.com/walee0852963/walee0852963"
+                                <a href="https://github.com/walee085296/spms_project"
                                     class="font-bold text-gray-500 hover:text-gray-900 px-3 py-2 rounded-full hover:bg-gray-100">Repository</a>
 
-                                <a href="https://github.com/walee0852963"
+                                <a href="https://github.com/walee085296/spms_project?tab=readme-ov-file#about-the-project"
                                     class="font-bold text-gray-500 hover:text-gray-900 px-3 py-2 rounded-full hover:bg-gray-100">Issues</a>
 
                                 <a href="https://github.com/walee0852963/walee0852963/blob/main/README.md"
@@ -93,16 +93,16 @@
                                 </div>
                             </div>
                             <div class="px-2 pt-2 pb-3 space-y-1">
-                                <a href="#"
+                                <a href="https://github.com/walee085296/spms_project?tab=readme-ov-file#about-the-project"
                                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Product</a>
 
-                                <a href="#"
+                                <a href="https://github.com/walee085296/spms_project?tab=readme-ov-file#about-the-project"
                                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Features</a>
 
-                                <a href="#"
+                                <a href="https://github.com/walee085296/spms_project?tab=readme-ov-file#about-the-project"
                                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Marketplace</a>
 
-                                <a href="#"
+                                <a href="https://github.com/walee085296/spms_project?tab=readme-ov-file#about-the-project"
                                     class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Company</a>
                             </div>
                             @auth

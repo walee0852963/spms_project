@@ -529,23 +529,78 @@ class ProjectController extends Controller
         return redirect()->back()->with('success', 'Project rejected successfully');
     }
 
+    // public function complete(Project $project)
+    // {
+    //     $this->authorize('complete', $project);
+    //     $sha = Http::withToken(env('GITHUB_TOKEN'))->get($project->url . 'https://api.github.com/repos/walee085296/spms_project/git/refs/heads/main')->json('0')['object']['sha'];
+    //     $response = Http::withToken(env('GITHUB_TOKEN'))->post(
+    //         $project->url . '/git/refs',
+    //         [
+    //             'ref' => 'refs/heads/' . str()->slug($project->type->value),
+    //             'sha' => $sha
+    //         ]
+    //     );
+    //     if ($response->failed()) {
+    //         return redirect()->back()->withErrors($response->json());
+    //     }
+    //     $project->update(['state' => ProjectState::Evaluating]);
+    //     return redirect()->back()->with('success', 'Completed successfully, awaiting evaluation');
+    // }
     public function complete(Project $project)
-    {
-        $this->authorize('complete', $project);
-        $sha = Http::withToken(env('GITHUB_TOKEN'))->get($project->url . '/git/refs/heads')->json('0')['object']['sha'];
-        $response = Http::withToken(env('GITHUB_TOKEN'))->post(
-            $project->url . '/git/refs',
-            [
-                'ref' => 'refs/heads/' . str()->slug($project->type->value),
-                'sha' => $sha
-            ]
-        );
-        if ($response->failed()) {
-            return redirect()->back()->withErrors($response->json());
-        }
-        $project->update(['state' => ProjectState::Evaluating]);
-        return redirect()->back()->with('success', 'Completed successfully, awaiting evaluation');
+{
+    $this->authorize('complete', $project);
+
+    $owner = "walee085296";
+    $repo  = "spms_project";
+
+    // API: Get last commit SHA from main branch
+    $commitsUrl = "https://api.github.com/repos/{$owner}/{$repo}/git/refs/heads/main";
+
+    $shaResponse = Http::withToken(env('GITHUB_TOKEN'))->get($commitsUrl);
+
+    if ($shaResponse->failed()) {
+        return redirect()->back()->withErrors([
+            'error' => 'Failed to fetch commit SHA from GitHub',
+            'details' => $shaResponse->json(),
+        ]);
     }
+
+    $data = $shaResponse->json();
+
+    if (!isset($data['object']['sha'])) {
+        return redirect()->back()->withErrors([
+            'error' => 'Invalid response from GitHub',
+            'data' => $data,
+        ]);
+    }
+
+    $sha = $data['object']['sha'];
+
+    // 👇 اسم الفرع الجديد (من نوع المشروع)
+    $newBranch = str()->slug($project->type->value);
+
+    // API: Create new branch
+    $response = Http::withToken(env('GITHUB_TOKEN'))->post(
+        "https://api.github.com/repos/{$owner}/{$repo}/git/refs",
+        [
+            'ref' => "refs/heads/{$newBranch}",
+            'sha' => $sha,
+        ]
+    );
+
+    if ($response->failed()) {
+        return redirect()->back()->withErrors([
+            'error' => 'Failed to create branch in GitHub',
+            'details' => $response->json(),
+        ]);
+    }
+
+    // Update project state
+    $project->update(['state' => ProjectState::Evaluating]);
+
+    return redirect()->back()->with('success', "Branch '{$newBranch}' created successfully! Awaiting evaluation.");
+}
+
     public function sync($id)
     {
         $project = Project::find($id);

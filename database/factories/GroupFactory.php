@@ -22,7 +22,7 @@ class GroupFactory extends Factory
     public function definition()
     {
         return [
-            'project' => factory->create(10);
+            // 'project' => factory->create(10);
         ];
     }
 }
