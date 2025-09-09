@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="#">
+  <a href="https://advancedacademy.edu.eg/Katamia/RootPages/Default.aspx">
     <img src="./Logo.png" alt=" المتطوره University" width="180" height="160">
   </a>
 
@@ -11,9 +11,9 @@
   <p align="center">
     An awesome way to manage your student's projects!
     <br />
-    <a href="#">Report Bugs</a>
+    <a href="https://relaxed-banoffee-2df85b.netlify.app/">Report Bugs</a>
     ·
-    <a href="#">Request Feature</a>
+    <a href="https://relaxed-banoffee-2df85b.netlify.app/">Request Feature</a>
   </p>
 </div>
 
