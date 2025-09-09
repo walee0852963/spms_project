@@ -2,8 +2,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/DU-EDU-SY/SPMS">
-    <img src="./Logo.png" alt="Damascus University" width="180" height="160">
+  <a href="#">
+    <img src="./Logo.png" alt=" المتطوره University" width="180" height="160">
   </a>
 
   <h3 align="center">Students Project Management System</h3>
@@ -11,9 +11,9 @@
   <p align="center">
     An awesome way to manage your student's projects!
     <br />
-    <a href="https://github.com/DU-EDU-SY/SPMS/issues">Report Bugs</a>
+    <a href="#">Report Bugs</a>
     ·
-    <a href="https://github.com/DU-EDU-SY/SPMS/issues">Request Feature</a>
+    <a href="#">Request Feature</a>
   </p>
 </div>
 
